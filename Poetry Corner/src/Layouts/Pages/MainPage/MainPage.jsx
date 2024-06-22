@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { news } from "../../data/news";
-import { posts } from "../../data/posts";
-import { ads } from "../../data/ads";
-import News from "../../Components/News/News";
-import RecentPosts from "../../Components/RecentPosts.jsx/RecentPosts";
-import AdsWidget from "../../Components/AdsWidget/AdsWidget";
-import useGridInitialization from "../../CustomHooks";
-import VideoSection from "../../Components/VideoSection/VideoSection";
+import { news } from "../../../data/news";
+import { posts } from "../../../data/posts";
+import { ads } from "../../../data/ads";
+import News from "../../../Components/RecentNews/RecentNews";
+import RecentPosts from "../../../Components/RecentPosts/RecentPosts";
+import AdsWidget from "../../../Components/AdsWidget/AdsWidget";
+import VideoSection from "../../../Components/VideoSection/VideoSection";
+import TopAuthors from "../../../Components/TopAuthors/TopAuthors";
+import { RecentPostsGrid } from "./MainPage.config";
 
 export default function MainPage() {
   return (
@@ -30,8 +31,12 @@ export default function MainPage() {
       <News news={news}></News>
       <VideoSection></VideoSection>
       <AdsWidget ads={ads}></AdsWidget>
-      <RecentPosts posts={posts}></RecentPosts>
-      {/* <Slider></Slider> */}
+      <RecentPosts
+        recentPostsGrid={RecentPostsGrid}
+        posts={posts}
+        direction="vertical"
+      ></RecentPosts>
+      <TopAuthors></TopAuthors>
     </main>
   );
 }

@@ -2,8 +2,17 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    extend: {
+      keyframes: {
+        appear: {
+          "0%": { opacity: 0.2 },
+          "100%": { opacity: 1 },
+        },
+      },
+    },
     fontFamily: {
       sans: ["Jost", "sans-serif"],
+      handwritten: ["Great Vibes", "cursive"],
     },
     colors: {
       neutral_01: "#656d4f",
@@ -29,6 +38,8 @@ export default {
       yt_icon: "url(/src/assets/youtube.svg)",
       tg_icon: "url(/src/assets/telegram.svg)",
       pen: "url(/src/assets/pen.png)",
+      cross: "url(/src/assets/cross.svg)",
+      right_arrow: "url(/src/assets/right_arrow.svg)",
     },
   },
   plugins: [],
